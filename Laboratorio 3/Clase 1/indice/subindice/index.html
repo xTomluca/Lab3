@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<!-- IDIOMA-->
+<!--  Para comentar C + TAB // CTRL + K + C -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Lenguaje de codificacion-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Parte visible de la pagina (Relacionado con la resolucion) -->
+    <meta type="description" content="Este es el contenido de la web">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> <!-- Titulo web-->
+    <style>
+        span {
+            color: brown
+        }
+
+        div {
+            color: blueviolet
+        }
+
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hola mundo</p> <!-- P parrafo -->
+    <div>
+        <!-- EN BLOQUE -->
+        Lorem ipsum dolor <span id="aa">sit amet consectetur adipisicing elit</span>. Cupiditate eos vel saepe
+        repellendus mollitia illo
+        unde perferendis rerum illum aperiam. <span>Fuga voluptate quis fugit rem ullam et officia</span> cumque
+        consequatur!
+    </div> <!-- Referenciar -->
+    <span>
+        <!-- EN LINEA -->
+        <!--  -->
+        Esto es un spam
+    </span>
+    <h1>Esto es un h1</h1> <!-- titulo principal -->
+    <h2>Esto es un h2</h2> <!--  -->
+
+    <h2>Bebidas</h2>
+
+
+    <ol>
+        <!-- Lista ordenada -->
+        <li>Cocucha<ul>
+                <!--  LISTA NO ORDENADA, ELEMENTOS LI -->
+                <li>Coca</li>
+                <li>Fanta</li>
+                <li>Vamo Manaos</li>
+            </ul>
+        </li>
+        <li>Pesicola</li>
+        <li>Monsanto</li>
+    </ol>
+
+    <dl><!-- Lista de definiciones -->
+        <dt>Visual</dt>
+        <dd>Visual es un programa de BIL GEY</dd><!-- DATA DEFINISHON -->
+
+    </dl>
+
+    <table border = "1px">
+        <thead><!-- ENCIERRA ENCABEZADO -->
+            <tr>
+                <th colspan="3"> <!-- COLSPAN SE LE DA EL TAMAÑO QUE OCUPA -->
+                    Materias
+                </th><!-- TABLE HEAD -->
+            </tr>
+        </thead>
+        <tbody><!-- ENCIERRA EL CUERPO -->
+        <tr> 
+            <td>Programacion 1</td> <!-- TH ENCABEZADO TABLA -->
+            <td>Programacion 2</td>
+            <td>Programacion 3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Nota 1</td><!-- TABLE DATA --> <!-- ROWSPAN EXPANDIR FILAS -->
+            <td>Nota 2</td>
+            <td>Nota 3</td>
+        </tr>
+        <tr>
+            <td>Nota 2</td>
+            <td>Nota 3</td>
+        </tr>
+        </tbody>
+    </table>
+    <img src="../../images/logoHTML5.jpg" alt="Imagen html5" title="LOGO HTML4">
+
+    <img src="https://images.pexels.com/photos/261783/pexels-photo-261783.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+    <pre><code>PAPAA</code></pre>
+    <!-- Inline(espacio justo que ocupa del elemento) y block(Ocupa todo el ancho de la ventana/contenedor) -->
+    <video src="../../../images/video.mp4" controls width="500px" poster="../../../images/logoHTML5.jpg"></video>
+
+</body>
+
+</html>
