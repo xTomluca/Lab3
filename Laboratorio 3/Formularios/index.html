@@ -10,14 +10,54 @@
     <h1>Formularios</h1>
 
     <form id="frm1" action="pagina1.php" method="get">
-        <p><label for="">Nombre: <input type="text" id="txtNombre" name="nombre" class=""></label></p>
+        <p><label for="">Nombre: <input type="text" id="txtNombre" name="nombre" class="" placeholder="Agrega nombre wachin!" readonly></label></p>
          <!-- ES COMO SE RECUPERA -->
-        <p> <label >Clave: <input type="password" id="txtClave" name="password" class=""></label></p>
+         <!-- READONLY SOLO LECTURA -->
+         <!-- DISABLE PARA DESHABILITAR -->
+         <!-- REQUIERED COMPLETA ESTE CAMPO -->
+        <fieldset>
+            <legend>Datos personales</legend>
+            <p><label>Clave: <input type="password" id="txtClave" name="password" class="" placeholder="No pongas la contraseña"></label></p>
+            <p><label>Email:<input type="Email" name = "email" id="textEmail"></label></p>
+        </fieldset>
+
+        <p><label><input type="number" name="edad" id="textEdad" min ="1" max = "10" value = "5"></label></p>
+        <p><label><input type="file" name="file" id="textFile"></label></p>
+        <p><label><input type="date" name="" id=""></label></p>
         <p> <input type="button" value="Un boton"> </p>
+
+        
+        <select name="" id="">
+            
+            <optgroup label="Lenguajes">
+                    <option value="0">C#</option>
+                    <option value="1">Visual</option>
+            </optgroup>
+            <option value="2">JavaScript</option>
+            <option value="3">Java</option>
+
+        </select>
+        <button>Enviar formulario</button>
+        
+        <label for="">Nada: <input type="checkbox" name="" id="" ></label> <!-- CHEKED CHEQUEADO DISABLE DESHABILITADO -->
+        <label for="">Patina: <input type="checkbox" name="" id=""></label>
+        <label for="">Corre: <input type="checkbox" name="" id=""></label>
+        <fieldset >
+            <legend>Sexo:</legend>
+            <label for="">Masculino<input type="radio" name="option" id=""></label>
+            <label for="">Femenino <input type="radio" name="option" id=""></label>
+        </fieldset>
+        <br><br>
+        <label for="comentarios">Comentarios</label>
+        <br>
+        <textarea name="comentarios" id="" cols="30" rows="10"></textarea>
+
+        <br><br>
+            <p>E = m . c<sub>2</sub></p>
+        <br>
+        <u>ESTO ESTA <mark>SUBRAYADO</mark> GATO</u>
         <input type="submit" value="Enviar">
         <input type="reset">
-        <button>Enviar formulario</button>
-
         <script>
             
             //var txtNombre = document.getElementById('txtNombre');
