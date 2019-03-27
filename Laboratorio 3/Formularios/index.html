@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+
+    <form id="frm1" action="pagina1.php" method="get">
+        <p><label for="">Nombre: <input type="text" id="txtNombre" name="nombre" class=""></label></p>
+         <!-- ES COMO SE RECUPERA -->
+        <p> <label >Clave: <input type="password" id="txtClave" name="password" class=""></label></p>
+        <p> <input type="button" value="Un boton"> </p>
+        <input type="submit" value="Enviar">
+        <input type="reset">
+        <button>Enviar formulario</button>
+
+        <script>
+            
+            //var txtNombre = document.getElementById('txtNombre');
+            var frm = document.getElementById('frm1');
+            frm.addEventListener('submit', (e)=> //ARROW FUNCTION
+            {
+                e.preventDefault();
+                alert("ManejeEventoDistinto");
+            });// FUNCION ANONIMA function (e)
+
+            /*frm.addEventListener('submit', manejarSubmit);
+
+            function manejarSubmit(e)
+            {
+                e.preventDefault();
+                alert("Maneje el evento");
+            }*/
+
+        </script>
+    </form>
+</body>
+</html>
