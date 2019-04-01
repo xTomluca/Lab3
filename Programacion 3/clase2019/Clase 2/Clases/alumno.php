@@ -19,13 +19,13 @@ class Alumno extends persona
 		if(file_exists($pathfile))
 		{
 			$arch = fopen($pathfile,"a");
-			fwrite($arch,$this->nombre .",". $this->edad.",". $this->dni.",". $this->legajo."\r\n");
+			fwrite($arch,"\r\n".$this->nombre .",". $this->edad.",". $this->dni.",". $this->legajo);
 			fclose($arch);
 		}
 		else
 		{
 			$arch = fopen($pathfile,"w");
-			fwrite($arch,$this->nombre .",". $this->edad.",". $this->dni.",". $this->legajo."\r\n");
+			fwrite($arch,$this->nombre .",". $this->edad.",". $this->dni.",". $this->legajo);
 			fclose($arch);
 		}
 	}

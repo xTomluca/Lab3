@@ -1,6 +1,6 @@
 <?php
 
-include "././alumno.php";
+require_once '../Clases/alumno.php';
 //var_dump($_GET);
 //var_dump($_POST);
 //var_dump($_REQUEST);
@@ -12,6 +12,7 @@ $legajo = $_POST['legajo'];
 $path = $_POST['path'];
 $pathjson = $_POST['pathjson'];
 $alumnoPost = new alumno($nombre,$edad,$dni,$legajo);
+
 echo $alumnoPost->jsonReturn();
 //var_dump($alumnoPost);
 $alumnoPost->guardarAlumno($path);
