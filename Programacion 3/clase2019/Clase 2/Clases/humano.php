@@ -15,6 +15,7 @@ class Humano{
 	{
 		return json_encode($this);
 	}
+
 }
 
 ?>

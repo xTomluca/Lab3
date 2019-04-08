@@ -44,8 +44,13 @@ class Alumno extends persona
 			fclose($arch);
 		}
 	}
-
-	
+	public function mostrarAlumno()
+	{
+		echo "Nombre:" . $this->nombre;
+		echo "Edad:" . $this->edad;
+		echo "Dni:" . $this->dni;
+		echo "Legajo:" . $this->legajo;
+	}
 }
 
 

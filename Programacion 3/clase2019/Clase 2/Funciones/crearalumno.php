@@ -20,47 +20,112 @@ $alumnoPost->guardarAlumnoJson($pathjson);
 
 //------------------------------------------------- FOTOS ----------------------------------////
 
-$file = $_FILES['archivo'];
+$filefoto = $_FILES['archivo'];
 $filemarca = $_FILES['marca'];
 
-$marca = $filemarca["name"];
-$marcatmp = $filemarca["tmp_name"];
-var_dump($file);
 
-$filetmpname = $file["tmp_name"];
-$filename = $file["name"];
-$filecutname=explode(".",$filename);
+$filetmpname = $filefoto["tmp_name"];
+$fotoname = $filefoto["name"];
+$filecutname=explode(".",$fotoname);
 
-
-
-
-
-
-if(file_exists("./fotos/$filename"))
+function crearMarcaDeAgua($foto,$filemarca)
 {
+    $marca = $filemarca["name"];
+    $marcatmp = $filemarca["tmp_name"];
     move_uploaded_file($marcatmp,"./fotos/$marca");
-    $margen_dcho = 10;
-    $margen_inf = 10;
-    $sx = imagesx("./fotos/$marca");
-    $sy = imagesy("./fotos/$marca");
-    imagecopy($filename, $marca, imagesx($im) 
-    - $sx - $margen_dcho, imagesy($filename) - $sy - $margen_inf, 0, 0, imagesx($marca), imagesy($marca));
+    $margen_dcho = 0;
+    $margen_inf = 0;
+
+    $fotoImg=NULL;
+    $marcaImg=NULL;
+    $fotoCut = explode(".",$foto);
+    $marcaCut= explode(".",$marca);
+    if(!strcmp($marcaCut[1],"jpg"))
+    {
+        if(!strcmp($fotoCut[1],"jpg"))
+        {
+            $marcaImg = imagecreatefromjpeg("./fotos/$marca");
+            $fotoImg = imagecreatefromjpeg("./fotos/$foto");
+            var_dump($marcaImg);
+            $sx = imagesx($marcaImg);
+            $sy = imagesy($marcaImg);
+            imagecopy($fotoImg, $marcaImg, imagesx($fotoImg) 
+            - $sx - $margen_dcho, imagesy($marcaImg) - $sy - $margen_inf, 0, 0, imagesx($marcaImg), imagesy($marcaImg));
+            imagejpeg($fotoImg,"./fotos/$foto");
+            return true;
+        }
+        else if(!strcmp($fotoCut[1],"png"))
+        {
+            $marcaImg = imagecreatefromjpeg("./fotos/$marca");
+            $fotoImg = imagecreatefrompng("./fotos/$foto");
+            $sx = imagesx($marcaImg);
+            $sy = imagesy($marcaImg);
+            imagecopy($fotoImg, $marcaImg, imagesx($fotoImg) 
+            - $sx - $margen_dcho, imagesy($marcaImg) - $sy - $margen_inf, 0, 0, imagesx($marcaImg), imagesy($marcaImg));
+            imagepng($fotoImg,"./fotos/$foto");
+            return true;
+        }
+        else
+            return false;
+    }
+    else if(!strcmp($marcaCut[1],"png"))
+    {
+        if(!strcmp($fotoCut[1],"png"))
+        {
+            $fotoImg = imagecreatefrompng("./fotos/$foto");
+            $marcaImg = imagecreatefrompng("./fotos/$marca");
+            $sx = imagesx($marcaImg);
+            $sy = imagesy($marcaImg);
+            imagecopy($fotoImg, $marcaImg, imagesx($fotoImg) 
+            - $sx - $margen_dcho, imagesy($marcaImg) - $sy - $margen_inf, 0, 0, imagesx($marcaImg), imagesy($marcaImg));
+            imagepng($fotoImg,"./fotos/$foto");
+            return true;
+        }
+        else if(!strcmp($fotoCut[1],"jpg"))
+        {
+            $fotoImg = imagecreatefromjpeg("./fotos/$foto");
+            $marcaImg = imagecreatefrompng("./fotos/$marca");
+            $sx = imagesx($marcaImg);
+            $sy = imagesy($marcaImg);
+            imagecopy($fotoImg, $marcaImg, imagesx($fotoImg) 
+            - $sx - $margen_dcho, imagesy($marcaImg) - $sy - $margen_inf, 0, 0, imagesx($marcaImg), imagesy($marcaImg));
+            imagejpeg($fotoImg,"./fotos/$foto");
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
+}
+
+function actualizarFoto($rutaFoto)
+{
     $dia = getdate();
-    $filecutname=explode(".",$filename);
-    $oldpath = "./fotos/$filename";
-    var_dump($oldpath);
-    $newpath = "./fotosbackup/$filecutname[0]". $dia["mday"]."-". $dia["mon"] . "-" . $dia["year"] . "." .$filecutname[1];
-    var_dump($newpath);
+    $filecutname=explode(".",$rutaFoto);
+    $oldpath = "./fotos/$rutaFoto";
+    $newpath = "./fotosbackup/$filecutname[0]" ."-". $dia["mday"]."-". $dia["mon"] . "-" . $dia["year"] . "." .$filecutname[1];
     rename($oldpath,$newpath);
-    move_uploaded_file($filetmpname,"./fotos/$filename");
+}
+
+if(file_exists("./fotos/$legajo.jpg"))
+{
+    actualizarFoto("$legajo.jpg");
+    move_uploaded_file($filetmpname,"./fotos/$legajo.jpg");
+  
+    crearMarcaDeAgua("$legajo.jpg",$filemarca);
+}
+else if(file_exists("./fotos/$legajo.png"))
+{
+    echo $legajo;
+    actualizarFoto("$legajo.png");
+    move_uploaded_file($filetmpname,"./fotos/$legajo.png");
+    crearMarcaDeAgua("$legajo.png",$filemarca);
 }
 else
 {
-
-    move_uploaded_file($filetmpname,"./fotos/$filename");
+    move_uploaded_file($filetmpname,"./fotos/$legajo.$filecutname[1]");
+    crearMarcaDeAgua("$legajo.$filecutname[1]",$filemarca);
 }
-
-
-
 
 ?>
