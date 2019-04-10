@@ -1,0 +1,22 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color : violet;
+    position: absolute;
+/*    position: relative;
+    top: 25px;
+    left: 25px;*/
+}
+
+.interno{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+body{
+    height: 1000px;
+}

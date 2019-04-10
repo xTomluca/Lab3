@@ -1,0 +1,17 @@
+#miParrafo{
+    color: red
+}
+
+#miDiv{
+    height: 100px;
+    background-color: green;
+    width : 100px;
+    border: 0px,10px,15px,10px;
+}
+p{
+    color:blue;
+    font-family:  'Times New Roman', Times, monospace;
+    font-style: italic;
+    font-size: 2vw;
+}
+

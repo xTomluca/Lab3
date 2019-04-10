@@ -1,0 +1,36 @@
+table, th, tr,td{
+    border: 2px black solid;
+    border-collapse: collapse;
+}
+
+table{
+    width: 2000px;
+}
+
+.contenedor{
+    overflow-x: scroll;
+}
+
+tr:nth-child(odd){
+    background-color: rgba(255, 10, 10, 0.8);
+}
+tr:nth-child(odd):hover{
+    background-color: rgba(67, 255, 10, 0.8);
+}
+tr:nth-child(even):hover{
+    background-color: rgba(251, 255, 10, 0.877);
+    transition: background-color 2s;
+}
+tr:nth-child(even){
+    background-color: rgba(10, 67, 255, 0.8);
+}
+
+td{
+    height: 50px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+th{
+    padding: 10px;
+}
