@@ -1,11 +1,12 @@
 div{
     width: 100px;
     height: 100px;
-    background-color : violet;
+    background-color : rgb(255, 0, 0,1);
     position: absolute;
 /*    position: relative;
     top: 25px;
     left: 25px;*/
+    z-index: -2;
 }
 
 .interno{
@@ -15,6 +16,7 @@ div{
     position: absolute;
     top: 10px;
     left: 10px;
+    z-index: -1;
 }
 
 body{
