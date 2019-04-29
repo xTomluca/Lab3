@@ -19,7 +19,7 @@
         fclose($resource);
         return $arrayAlumnos;
 	}*/
-
+    /*
     function traerAlumnosArchivo($nombreArchivo)
 	{
 		$pathfile = "../Archivos/".$nombreArchivo;
@@ -56,29 +56,18 @@
         }
         fclose($resource);
         return $arrayAlumnos;
-	}
-    function mostrarTodosLosAlumnosArchivo($arrayAlumnos)
-    {
-        foreach($arrayAlumnos as $auxAlumno)
-        {
-            $auxAlumno->mostrarAlumno();
-        }
-    }
-
+    }*/
+    
+    
+    $alumno = new Alumno();
     echo "<b>DESDE ARCHIVO</b> </br></br>";
     //Muestro todos los alumnos desde archivo
-    mostrarTodosLosAlumnosArchivo(traerAlumnosArchivo("elarchivo.txt"));
+    $alumno->mostrarTodosLosAlumnosArchivo($alumno->traerAlumnosArchivo("elarchivo.txt"));
 
     echo "<b>DESDE ARCHIVO JSON</b> </br></br>";
-    mostrarTodosLosAlumnosArchivo(traerAlumnosArchivo("json.json"));
+    $alumno->mostrarTodosLosAlumnosArchivo($alumno->traerAlumnosArchivo("json.json"));
     echo "<b>DESDE SQL</b> </br></br>";
 
-    $Alumno = new Alumno();
-    $resultado = $Alumno->TraerTodoLosCds();
-    //var_dump($resultado);
-    foreach($resultado as $unAlumno)
-    {
-        $unAlumno->mostrarAlumno();
-   }
+    $alumno->mostrarAlumnosSql();
 
 ?>

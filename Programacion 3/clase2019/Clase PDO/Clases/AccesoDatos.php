@@ -4,7 +4,7 @@ class AccesoDatos
     private static $ObjetoAccesoDatos;
     private $objetoPDO;
  
-    private function __construct()
+    public function __construct()
     {
         try { 
             $this->objetoPDO = new PDO('mysql:host=localhost;dbname=alumnos;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
