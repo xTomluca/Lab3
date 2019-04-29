@@ -1,0 +1,3 @@
+Girnalda,10,1
+Cocacola,5,2
+Pepsi,2,2
