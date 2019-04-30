@@ -1,0 +1,2 @@
+ferrari,aurora,gow233,25000
+chevy,tu,aaa666,25000
