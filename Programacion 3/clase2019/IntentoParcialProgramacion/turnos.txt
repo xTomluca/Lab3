@@ -1,0 +1,3 @@
+22,Fiat,Palio,aaa222,15000,20000
+22,Palio,Fiat,aaa223,25000,50000
+2,F1,Red Bull,aaa111,45000,20000

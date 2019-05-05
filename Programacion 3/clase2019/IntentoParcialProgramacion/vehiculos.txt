@@ -1,0 +1,3 @@
+Fiat,Palio,aaa222,15000,SIN FOTO
+Palio,Fiat,aaa223,25000,SIN FOTO
+F1,Ferrari,aaa111,1200000,./fotos/aaa111.jpg

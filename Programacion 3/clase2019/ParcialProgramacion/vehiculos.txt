@@ -1,2 +1,2 @@
-ferrari,aurora,gow233,25000
-chevy,tu,aaa666,25000
+ferrari,aurora,gow233,25000,SIN FOTO
+chevy,tu,aaa666,25000,SIN FOTO
